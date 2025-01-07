@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <div id="myDiv"></div>
+  <script>
+    const img = new Image();
+    img.src = 'invalid-image.jpg';
+    img.onerror = () => {
+      // Handle error gracefully without alert
+      document.getElementById("myDiv").innerHTML = "Image not found. Please check your internet connection.";
+    };
+    img.onload = () => {
+      document.getElementById("myDiv").appendChild(img);
+    };
+  </script>
+</body>
+</html>
