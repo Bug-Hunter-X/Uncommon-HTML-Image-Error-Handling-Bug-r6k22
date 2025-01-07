@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv"></div>
+  <script>
+    // This line will cause an error in some browsers
+    document.getElementById("myDiv").innerHTML = "<img src='invalid-image.jpg' onerror='alert("Image not found!")'>";
+  </script>
+</body>
+</html>
